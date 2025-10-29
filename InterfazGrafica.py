@@ -2,17 +2,6 @@ import sys
 from PySide6.QtWidgets import QApplication, QWidget, QVBoxLayout, QPushButton, QTextEdit, QLineEdit, QLabel
 from sdkFP.Guardar import Guardar
 from sdkFP.Consultar import Consultar
-"""
-class Guardar:
-    def agregar(self, titulo, autor):
-        return f"Libro '{titulo}' de {autor} agregado (simulado)."
-
-class Consultar:
-    def consultar_libros(self):
-        return ["Libro 1\n", "Libro 2\n"]
-
-# El resto del código igual
-"""
 
 class App(QWidget):
     def __init__(self):
@@ -50,7 +39,7 @@ class App(QWidget):
     def accion_agregar_libro(self):
         titulo = self.titulo.text()
         autor = self.autor.text()
-        mensaje = self.guardar.agregar(titulo, autor)
+        mensaje = self.guardar.guardar_libro(titulo, autor)
         self.resultado.setText(mensaje)
 
     def accion_consultar_libros(self):
@@ -65,3 +54,14 @@ if __name__ == "__main__":
     ventana = App()
     ventana.show()
     sys.exit(app.exec())
+
+"""
+¿Que propiedades de ka programacion orientada a objetos identificas?
+-Encapsulamiento:
+Los atributos como titulo, autor, resultado y los métodos accion_agregar_libro y 
+accion_consultar_libros están contenidos dentro de la clase
+-Abstracción:
+La interfaz de usuario (UI) está abstraída dentro de la clase App, lo que oculta los detalles.
+-Herencia:
+La clase App hereda de QWidget.
+"""
